@@ -23,7 +23,7 @@ Trying to predict (or guess) various different outcomes inside the National Hock
 
 ## Background:
 #### Why is predicting player performance useful?
-There are at least three major reasons why we care about predicting player performance:<br>
+##### There are at least three major reasons why we care about predicting player performance:<br>
 	- `personal investment:` professional sports are a huge pasttime for many, and for many others that work in the field (reporters, analysts, commentators, team staff, franchise executives, etc.) their very livihoods are at stake. The ability to to make informed predictions or inferences may give one the upper hand against their friends, colleagues, or rivals. The bottom line here is that a lot of poeple simply care about what happens in professional sports.<br>
 	- `gambling:` In Canada and the US, sports gambling is a rapidly growing industry. There are a multitude of online betting companies and physical outlets where people can place bets on all manner of scenarios and outcomes. These scenarios can be at the team level or at the player level. If one can leverage predictive statistics and modelling to possibly gain an upper hand against the betting entities, there is a lot of money to be made. And vice versa, the betting entities themselves are trying to leverage these predictions to maximize their own profits.<br>
 	- `fantasy hockey:` This realm is of the most personal interest to me. In fantasy sports, you are pitted against friends and foes alike in a season-long battle to become the champion of your own fantasy league. The goal is to essentially pick what players you believe to be the 'best' as measured by a set of pre-determined metrics (goals, assists, shots, etc). To put it simply: if your players do better in the real-life games than the players of your opponent, you win. Fantasy sports is also fast becoming a monetarily-involved industry. Fantasy leagues often have a prize pool of cash at stake for the winners. On top of this, there are companies that provide the type of predictive analysis geared towards helping people win their fantasy leagues. One common business model is that a consumer pays a subscription fee (typically to renew at the beginning of each season) to gain access to the predicitve models that a company has built. If you are a company that has built a predictive model that's use is for sale, the incentive is to make your model the most accurate it can be in order to attract more users and sell subscriptions. 
@@ -51,7 +51,7 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
 
 ### Modeling Choices:
 * Linear regression - 
-* 
+* KNN regression?
 * 
 * 
 * 
@@ -82,8 +82,7 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
  * The instructors and my fellow classmates at Brainstation
 
 ### About the Author:  
-Colin Shanahan is a San Francisco based former mechanical engineer turned Data Scientist and a student at Galvanize's Data Science Immersive program. He is also a huge hockey fan.  
-You can reach him on [LinkedIn](https://www.linkedin.com/in/c-shan).
+Joshua Croasdale is a Data Science student at BrainStation in Vancouver, BC. 
 
 ## Glossary 
 
