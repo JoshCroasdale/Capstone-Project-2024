@@ -33,7 +33,7 @@ I will be attempting to predict NHL player performance as measured by the number
 
 
 ## Data:
-All player data was obtained from https://www.hockey-reference.com/. NHL player data for each NHL season (2005-06 to 2023-24 (ongoing season)) was pulled in a .csv format and saved into individual .csv files using a text editor. All .csv files were compiled into one dataframe via python and processed from there. See .ipynb notebook for more detail. 
+All player data was obtained from https://www.hockey-reference.com/. NHL player data for each season (2005-06 to 2023-24 (ongoing season)) was pulled in a .csv format and saved into individual .csv files using a text editor. All .csv files were compiled into one dataframe via python and processed from there. See .ipynb notebook for more detail. 
 
 
 
