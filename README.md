@@ -87,6 +87,7 @@ Joshua Croasdale is a Data Science student at BrainStation in Vancouver, BC.
 ## Glossary 
 
 Year -- Year at time of season finale<br>
+
 Age -- Player age at time of finale<br>
 
 Pos -- Player position<br>
