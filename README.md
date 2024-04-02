@@ -38,9 +38,9 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
 
 
 #### Features and trends that stood out:
- - 
- - 
- - 
+ - Multicollinearity
+ - Career numbers are not necessarily indicitave of recent or future performance! 
+ - Modelling hockey projections is difficult by nature
  - 
  - 
  - 
@@ -50,17 +50,19 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
 ## Model:
 
 ### Modeling Choices:
-* Linear regression - 
+* Linear regression - Pipeline, PCA feature reduction, StandardScaler
+   - career_totals
+   - career_per_game
+   - three_yr_weighted_average
+* Neaural Network for regression
 * KNN regression?
 * 
 * 
-* 
-
-
 
 
 ## Conclusions:
-
+* Models tend to overfit with no feature reduction
+* 
 
 
 ### Results:
@@ -72,8 +74,10 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
  - pandas  
  - matplotlib
  - seaborn
- - Tableau
- - SQL
+ - plotly express
+ - tensor
+ - keras
+ - sweetviz
  - Hockey-Reference (player data)
  
 
