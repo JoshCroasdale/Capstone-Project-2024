@@ -1,18 +1,17 @@
-## README - Capstone Project
+# README - Capstone Project
 
-### Predicting NHL Player Performance Using Linear Regression and ML models
+## Predicting NHL Player Performance Using Linear Regression and Neural Networks
  
 
-### Table of Contents:
+## Table of Contents:
  * [Preamble](#Preamble)
  * [Background](#Background)
  * [Goal](#Goal)
  * [Data](#Data)
  * [Model](#Model)
     - [Modeling Choices](#modeling-choices)
+ * [Results](#results)
  * [Conclusions](#conclusions)
-    - [Important Features](#permutation-importance)
-    - [Results](#results)
     - [Tools used](#tools-and-resources-used)
     - [Special Thanks](#special-thanks)
  * [About the Author](#about-the-author)
@@ -29,21 +28,24 @@ Trying to predict (or guess) various different outcomes inside the National Hock
 - `fantasy hockey:` This realm is of the most personal interest to me. In fantasy sports, you are pitted against friends and foes alike in a season-long battle to become the champion of your own fantasy league. The goal is to essentially pick what players you believe to be the 'best' as measured by a set of pre-determined metrics (goals, assists, shots, etc). To put it simply: if your players do better in the real-life games than the players of your opponent, you win. Fantasy sports is also fast becoming a monetarily-involved industry. Fantasy leagues often have a prize pool of cash at stake for the winners. On top of this, there are companies that provide the type of predictive analysis geared towards helping people win their fantasy leagues. One common business model is that a consumer pays a subscription fee (typically to renew at the beginning of each season) to gain access to the predicitve models that a company has built. If you are a company that has built a predictive model that's use is for sale, the incentive is to make your model the most accurate it can be in order to attract more users and sell subscriptions. 
 
 ## Goal:
-I will be attempting to predict NHL player performance as measured by the number of `goals` and `assists` that a given player will produce, averaged over the length of an entire NHL season (82 games). With this endeavor, I am emulating the useful information that someone trying to win their fantasy hockey league can leverage to gain the upper hand. 
+I will be attempting to predict NHL player performance as measured by the number of `goals` that a given player will score. I will primarily be working with rate stats, that is the raw total of a given statistic for a given player divided by the total number of games played for that player. <br>
+With this endeavor, I am emulating the useful information that someone trying to win their fantasy hockey league can leverage to gain the upper hand.<br>
+In the future, the foundation of work that I have done will be adapted to predict a whole host of statistics, and not just goals.<br>
+Additionally, the work can be adapted for use with game-by-game predictions. This approach would have the real-world use case of sports gambling supplementation.
 
 
 ## Data:
 All player data was obtained from https://www.hockey-reference.com/. NHL player data for each season (2005-06 to 2023-24 (ongoing season)) was pulled in a .csv format and saved into individual .csv files using a text editor. All .csv files were compiled into one dataframe via python and processed from there. See .ipynb notebook for more detail. 
 
 
-
 #### Features and trends that stood out:
- - Multicollinearity
- - Career numbers are not necessarily indicitave of recent or future performance! 
- - Modelling hockey projections is difficult by nature
- - 
- - 
- - 
+ - Career numbers are not necessarily indicitave of recent or future performance!
+   - Player performance changes over the course of a player's career. Experience-related improvement and age-related decline are certainties for all players.
+ - Per-Game rate stats were implemented in order to "level the playing field" and easily compare players
+   - It is difficult to compare a player who has 200 goals over 1000 games played to a player who has 50 goals over 160 games played. Dividing by games played will produce a Goals/Game number that is directly comparable across all players (I calculated these rate stats for every statistic (every feature)).
+   - This is essentially a form of scaling. One pitfall I had to be aware of is players that have very few games played. Samples (players) that have very few games played can skew outputs. eg. 1 goal over 1 game equates to 1 Goal/Game, however, this sample is not indicitave of the overall population performance. 
+ - Career total rate stats have another glaring issue, and it involves the experience-related improvement and age-related decline that was previously mentioned. If career-long numbers are used in modelling, the model will take it to mean that every season of a player's career should be weighted equally.
+ - In reality, the more recent seasons of player's career are most predictive of future performance. The industry standard for approaching this pitfall is to implement a three year weighted average to feed to the model.
  - 
 
 
@@ -55,17 +57,14 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
    - career_per_game
    - three_yr_weighted_average
 * Neaural Network for regression
-* KNN regression?
-* 
-* 
+* KNN regression model was also fit.
 
-
-## Conclusions:
+## Results:
 * Models tend to overfit with no feature reduction
 * 
 
 
-### Results:
+## Conclusions:
 
 
 ### Tools and Resources used:  
@@ -75,14 +74,15 @@ All player data was obtained from https://www.hockey-reference.com/. NHL player 
  - matplotlib
  - seaborn
  - plotly express
- - tensor
+ - statsmodels
+ - tensorflow
  - keras
  - sweetviz
  - Hockey-Reference (player data)
  
 
 ### Special Thanks:
- * Thanks to Hockey reference for providing their NHL data for free use on their website
+ * Thanks to Hockey reference for providing their NHL data free of use on their website
  * The instructors and my fellow classmates at Brainstation
 
 ### About the Author:  
